@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(CPU_Scheduler PRIVATE
     ${PROJECT_SOURCE_DIR}/Round-Robin
     ${PROJECT_SOURCE_DIR}/Process
+        ${PROJECT_SOURCE_DIR}/Preemptive_priority
     # ${PROJECT_SOURCE_DIR}/First-Come-First-Serve
     # ${PROJECT_SOURCE_DIR}/Priority-Scheduler
     # ${PROJECT_SOURCE_DIR}/Shortest-Job-First
@@ -18,15 +19,17 @@ file(GLOB PROJECT_SOURCES
     "${PROJECT_SOURCE_DIR}/*.cpp"
     "${PROJECT_SOURCE_DIR}/Round-Robin/*.cpp"
     "${PROJECT_SOURCE_DIR}/Process/*.cpp"
-    # "${PROJECT_SOURCE_DIR}/First-Come-First-Serve/*.cpp"
-    # "${PROJECT_SOURCE_DIR}/Priority-Scheduler/*.cpp"
+        "${PROJECT_SOURCE_DIR}/Preemptive_priority/*.cpp"
+       # "${PROJECT_SOURCE_DIR}/First-Come-First-Serve/*.cpp"
+     "${PROJECT_SOURCE_DIR}/Priority-Scheduler/*.cpp"
     # "${PROJECT_SOURCE_DIR}/Shortest-Job-First/*.cpp"
 
 )
 
 # Create executable
-add_executable(CPU_Scheduler ${PROJECT_SOURCES})
+add_executable(CPU_Scheduler ${PROJECT_SOURCES}
 
+)
 
 
 # Set output directory to project root
