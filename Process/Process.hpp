@@ -12,6 +12,10 @@ public:
     int turn_around_time;
     int priority;
 
+    int Start_time = 0;       
+    bool IsInQueue = false;   
+    bool IsCompleted = false;
+
     Process(int process_id, int arrival_time = 0, int burst_time = 0, int priority = 5);
 
     int burst_time_now();
