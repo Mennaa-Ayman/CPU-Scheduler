@@ -1,7 +1,7 @@
 #ifndef PREEMPTIVE_PRIORITY_HPP
 #define PREEMPTIVE_PRIORITY_HPP
 
-#include "Process.hpp" // استخدام الملف الخاص بكِ
+#include "Process.hpp"
 #include <vector>
 #include <queue>
 #include <iostream>
@@ -23,8 +23,8 @@ private:
 
 public:
     void addProcess(const Process& p);
-    void runLive();    // تطبيق نظام الـ 1 ثانية = 1 وحدة زمنية [cite: 13]
-    void runInstant(); // تشغيل بدون انتظار [cite: 14]
+    void runLive();
+    void runInstant();
     void displayResults();
 };
 
