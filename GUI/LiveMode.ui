@@ -1,1 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ResultsWindow</class>
+ <widget class="QWidget" name="ResultsWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>963</width>
+    <height>696</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Main Background */
+QWidget {
+    background-color: #1A1A1D;
+    color: #E3E3E3;
+    font-family: "Quicksand", "Segoe UI", sans-serif;
+    font-size: 18px;
+}
 
+/* Elegant Tables */
+QTableWidget {
+    background-color: #252529;
+    gridline-color: #3B3B3F;
+    border: 1px solid #4E4E52;
+    border-radius: 10px;
+    selection-background-color: #F48FB1;
+    selection-color: #1A1A1D;
+}
+
+QHeaderView::section {
+    background-color: #2D2D32;
+    color: #F48FB1;
+    padding: 8px;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Light Pink Professional Buttons */
+QPushButton {
+    background-color: #F8BBD0;
+    color: #36454F;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+QPushButton:hover {
+    background-color: #FCE4EC;
+    border: 1px solid #F48FB1;
+}
+
+/* Input Fields */
+QLineEdit, QComboBox {
+    border: 2px solid #3B3B3F;
+    border-radius: 6px;
+    padding: 5px;
+    background: #121214;
+    color: #F8BBD0;
+}
+</string>
+  </property>
+
+  <widget class="QGraphicsView" name="graphicsView">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>50</y>
+     <width>900</width>
+     <height>100</height>
+    </rect>
+   </property>
+  </widget>
+
+  <widget class="QTableWidget" name="processTable">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>180</y>
+     <width>530</width>
+     <height>250</height>
+    </rect>
+   </property>
+  </widget>
+
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+      <x>600</x>
+      <y>190</y>
+      <width>110</width>
+      <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Process ID</string>
+   </property>
+  </widget>
+
+  <widget class="QLineEdit" name="plainTextEdit">
+   <property name="geometry">
+    <rect>
+      <x>720</x>
+      <y>190</y>
+      <width>150</width>
+      <height>31</height>
+    </rect>
+   </property>
+  </widget>
+
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+      <x>600</x>
+      <y>240</y>
+      <width>110</width>
+      <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>CPU Burst</string>
+   </property>
+  </widget>
+
+  <widget class="QLineEdit" name="plainTextEdit_2">
+   <property name="geometry">
+    <rect>
+      <x>720</x>
+      <y>240</y>
+      <width>150</width>
+      <height>31</height>
+    </rect>
+   </property>
+  </widget>
+
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+      <x>600</x>
+      <y>290</y>
+      <width>270</width>
+      <height>45</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>+ Add Process</string>
+   </property>
+  </widget>
+
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+      <x>600</x>
+      <y>390</y>
+      <width>270</width>
+      <height>45</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Pause</string>
+   </property>
+  </widget>
+
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+      <x>600</x>
+      <y>445</y>
+      <width>270</width>
+      <height>45</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Resume</string>
+   </property>
+  </widget>
+
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+      <x>600</x>
+      <y>500</y>
+      <width>270</width>
+      <height>45</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Finish</string>
+   </property>
+  </widget>
+
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>460</y>
+     <width>240</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Average Waiting time:</string>
+   </property>
+  </widget>
+
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+      <x>280</x>
+      <y>460</y>
+      <width>90</width>
+      <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0.0</string>
+   </property>
+  </widget>
+
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>500</y>
+     <width>240</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Average Turnaround time:</string>
+   </property>
+  </widget>
+
+  <widget class="QLabel" name="label_12">
+   <property name="geometry">
+    <rect>
+      <x>280</x>
+      <y>500</y>
+      <width>90</width>
+      <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0.0</string>
+   </property>
+  </widget>
+
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
