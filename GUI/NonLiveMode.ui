@@ -1,1 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>chart</class>
+ <widget class="QWidget" name="chart">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>791</width>
+    <height>561</height>
+   </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>ArrowCursor</cursorShape>
+  </property>
+  <property name="tabletTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Main Background - Dark and comfortable for eyes */
+
+QWidget {
+
+    background-color: #1A1A1D; /* Deep Charcoal-Plum */
+
+    color: #E3E3E3; /* Off-white text for less glare */
+
+    /* &quot;Quicksand&quot; is a beautiful, rounded, unique font */
+
+    font-family: &quot;Quicksand&quot;, &quot;Segoe UI&quot;, sans-serif;
+
+    font-size: 18px;
+
+}
+ 
+/* Elegant Tables with Dark Theme */
+
+QTableWidget {
+
+    background-color: #252529;
+
+    gridline-color: #3B3B3F;
+
+    border: 1px solid #4E4E52;
+
+    border-radius: 10px;
+
+    selection-background-color: #F48FB1; /* Soft Light Pink selection */
+
+    selection-color: #1A1A1D;
+
+}
+ 
+QHeaderView::section {
+
+    background-color: #2D2D32;
+
+    color: #F48FB1; /* Light Pink for professional contrast */
+
+    padding: 8px;
+
+    border: none;
+
+    font-weight: bold;
+
+    text-transform: uppercase; /* Makes the font look more unique/design-heavy */
+
+}
+ 
+/* Light Pink Professional Buttons */
+
+QPushButton {
+
+    background-color: #F8BBD0; /* Soft Peach-Pink (Lighter than before) */
+
+    color: #36454F; /* Deep purple text for high readability */
+
+    border-radius: 8px;
+
+    padding: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px; /* Gives the font a &quot;designer&quot; feel */
+
+}
+ 
+QPushButton:hover {
+
+    background-color: #FCE4EC; /* Even lighter on hover */
+
+    border: 1px solid #F48FB1;
+
+}
+ 
+/* Input Fields - Dark but clear */
+
+QLineEdit, QComboBox {
+
+    border: 2px solid #3B3B3F;
+
+    border-radius: 6px;
+
+    padding: 5px;
+
+    background: #121214;
+
+    color: #F8BBD0;
+
+}
+ 
+QComboBox::drop-down {
+
+    border: none;
+
+}
+ </string>
+  </property>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>420</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Quicksand</family>
+     <pointsize>-1</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Average wating time </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>460</y>
+     <width>231</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Quicksand</family>
+     <pointsize>-1</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Average turnaround time </string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="avgWaitOutput">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>420</y>
+     <width>63</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0.0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="avgTurnaroundOutput">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>460</y>
+     <width>63</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0.0</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>190</y>
+     <width>741</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QGraphicsView" name="graphicsView">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>741</width>
+     <height>101</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
 
