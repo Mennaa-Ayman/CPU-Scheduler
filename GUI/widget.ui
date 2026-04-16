@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>963</width>
+    <height>696</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Main Background - Dark and comfortable for eyes */
+
+QWidget {
+
+    background-color: #1A1A1D; /* Deep Charcoal-Plum */
+
+    color: #E3E3E3; /* Off-white text for less glare */
+
+    /* &quot;Quicksand&quot; is a beautiful, rounded, unique font */
+
+    font-family: &quot;Quicksand&quot;, &quot;Segoe UI&quot;, sans-serif;
+
+    font-size: 18px;
+
+}
+ 
+/* Elegant Tables with Dark Theme */
+
+QTableWidget {
+
+    background-color: #252529;
+
+    gridline-color: #3B3B3F;
+
+    border: 1px solid #4E4E52;
+
+    border-radius: 10px;
+
+    selection-background-color: #F48FB1; /* Soft Light Pink selection */
+
+    selection-color: #1A1A1D;
+
+}
+ 
+QHeaderView::section {
+
+    background-color: #2D2D32;
+
+    color: #F48FB1; /* Light Pink for professional contrast */
+
+    padding: 8px;
+
+    border: none;
+
+    font-weight: bold;
+
+    text-transform: uppercase; /* Makes the font look more unique/design-heavy */
+
+}
+ 
+/* Light Pink Professional Buttons */
+
+QPushButton {
+
+    background-color: #F8BBD0; /* Soft Peach-Pink (Lighter than before) */
+
+    color: #36454F; /* Deep purple text for high readability */
+
+    border-radius: 8px;
+
+    padding: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px; /* Gives the font a &quot;designer&quot; feel */
+
+}
+ 
+QPushButton:hover {
+
+    background-color: #FCE4EC; /* Even lighter on hover */
+
+    border: 1px solid #F48FB1;
+
+}
+ 
+/* Input Fields - Dark but clear */
+
+QLineEdit, QComboBox {
+
+    border: 2px solid #3B3B3F;
+
+    border-radius: 6px;
+
+    padding: 5px;
+
+    background: #121214;
+
+    color: #F8BBD0;
+
+}
+ 
+QComboBox::drop-down {
+
+    border: none;
+
+}
+ </string>
+  </property>
+  <widget class="QComboBox" name="comboBoxalgo">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>80</y>
+     <width>251</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <item>
+    <property name="text">
+     <string>FCFS</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Non Preemptive priority</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Preemptive priority</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Round Robin</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Non Preemptive SJF</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Preemptive_SJF</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QLabel" name="algo_label">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>261</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Quicksand</family>
+     <pointsize>-1</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Algorithm: </string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame_priority">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>20</y>
+     <width>291</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <widget class="QLabel" name="priority_label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>271</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Quicksand</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Priority</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtPriority">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>140</y>
+     <width>881</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <widget class="QLineEdit" name="txtProcessID">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Quicksand</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Process ID</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtArrivalTime">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>90</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>50</y>
+      <width>211</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Quicksand</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Arrival Time </string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txtBurstTime">
+    <property name="geometry">
+     <rect>
+      <x>570</x>
+      <y>90</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>50</y>
+      <width>161</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Quicksand</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Burst Time</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QTableWidget" name="processTable">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>300</y>
+     <width>881</width>
+     <height>281</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>590</y>
+     <width>301</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Quicksand</family>
+     <pointsize>-1</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Add Process</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="runButton">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>590</y>
+     <width>281</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Quicksand</family>
+     <pointsize>-1</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Non Live Mode</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>640</y>
+     <width>301</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Quicksand</family>
+     <pointsize>-1</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Delete Process</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="quantum_frame">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>10</y>
+     <width>311</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Shape::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Shadow::Raised</enum>
+   </property>
+   <widget class="QLabel" name="quantum_label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>271</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Quicksand</family>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Quantum Time </string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="quantum_text">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>251</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pauseButton">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>590</y>
+     <width>281</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Quicksand</family>
+     <pointsize>-1</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Live Mode </string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
