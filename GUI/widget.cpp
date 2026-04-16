@@ -1,8 +1,8 @@
 #include "widget.hpp"
 #include "ui_widget.h"
-//#include "NonLiveMode.hpp"
+#include "NonLiveMode.hpp"
 #include <QMessageBox>
-//#include "LiveMode.hpp"
+#include "LiveMode.hpp"
 
 Widget::Widget(QWidget *parent) : QWidget(parent), ui(new Ui::Widget) {
     ui->setupUi(this);
@@ -159,6 +159,7 @@ void Widget::on_pushButton_3_clicked() {
         ui->processTable->removeRow(currentRow);
 
     }
+
 }
 void Widget::on_runButton_clicked() {
     // 1. Initialize the new window
@@ -186,7 +187,7 @@ void Widget::on_runButton_clicked() {
 }
 
 void Widget::on_pauseButton_clicked() {
-    resultsWindow = new chart(nullptr);
+    resultsWindow = new ResultsWindow(nullptr);
     QString selectedAlgo = ui->comboBoxalgo->currentText();
 
     int quaantum = 0;
@@ -195,7 +196,7 @@ void Widget::on_pauseButton_clicked() {
     }
 
     if (!resultsWindow) {
-    resultsWindow = new chart(this);
+    resultsWindow = new ResultsWindow(this);
 }
     resultsWindow->show();
     resultsWindow->raise();

@@ -13,37 +13,64 @@
 
 class chart;
 
+class ResultsWindow;
+
 QT_BEGIN_NAMESPACE
+
 namespace Ui {
-    class Widget;
+
+class Widget;
+
 }
 
 QT_END_NAMESPACE
+
 class Widget : public QWidget
+
 {
+
     Q_OBJECT
+
 public:
 
     explicit Widget(QWidget *parent = nullptr);
+
     ~Widget() override;
 
 private slots:
+
     void on_comboBoxalgo_currentTextChanged(const QString &text);
+
     void on_pushButton_clicked();
+
     void on_pushButton_3_clicked(); // Must match pushButton_3 exactly
+
     void onTimerTick();
+
     void on_runButton_clicked();
+
     void on_pauseButton_clicked();
+
 private:
+
     Ui::Widget *ui;
+
     std::vector<Process> allProcesses;
+
     QTimer *simulationTimer;
+
     int currentTime = 0;
+
     int currentRunningID = -1;
+
     int getRemainingTime(int pID);
+
     chart *chartwindow;
-    chart *resultsWindow = nullptr; // Add this line
+
+    ResultsWindow *resultsWindow = nullptr; // Add this line
+
     bool liveModeActive = false;
+
 };
 
 #endif // WIDGET_H

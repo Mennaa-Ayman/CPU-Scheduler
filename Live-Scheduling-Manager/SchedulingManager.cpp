@@ -5,7 +5,9 @@
 
 SchedulingManager::SchedulingManager(SchedulerType type, int quantum)
     : type_(type), state_(IDLE), currentTime_(0), quantum_(quantum > 0 ? quantum : 1),
-      currentProcessIndex_(-1), quantumCounter_(0), lastRunningPID_(-1) {}
+      currentProcessIndex_(-1), quantumCounter_(0), lastRunningPID_(-1)
+{
+}
 
 SchedulingManager::~SchedulingManager() = default;
 
