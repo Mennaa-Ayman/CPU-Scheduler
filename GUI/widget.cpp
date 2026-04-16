@@ -159,54 +159,53 @@ void Widget::on_pushButton_3_clicked() {
         ui->processTable->removeRow(currentRow);
 
     }
+}
+void Widget::on_runButton_clicked() {
+    // 1. Initialize the new window
+    // We use a different name 'chartwindow' to avoid conflict with class name 'chart'
+    chartwindow = new chart(nullptr);
+
+    // 2. Pass algorithm type and process list
+    QString selectedAlgo = ui->comboBoxalgo->currentText();
+
+    // 3. Handle Quantum value
+    int quantumm = 0;
+
+    if (ui->quantum_frame->isVisible()) {
+        quantumm = ui->quantum_text->text().toInt();
+    }
+
+    // 4. Send data (Ensure this function is defined in chart.cpp)
+    chartwindow->setScheduleData(allProcesses, selectedAlgo, quantumm);
+
+    // 5. Force the window to appear
+    chartwindow->setAttribute(Qt::WA_DeleteOnClose); // Clean up memory when closed
+    chartwindow->setWindowModality(Qt::ApplicationModal); // Block main window until this is closed
+    chartwindow->raise();
+    chartwindow->activateWindow();
+}
+
+void Widget::on_pauseButton_clicked() {
+    resultsWindow = new chart(nullptr);
+    QString selectedAlgo = ui->comboBoxalgo->currentText();
+
+    int quaantum = 0;
+    if (ui->quantum_frame->isVisible()) {
+        quaantum = ui->quantum_text->text().toInt();
+    }
+
+    if (!resultsWindow) {
+    resultsWindow = new chart(this);
+}
+    resultsWindow->show();
+    resultsWindow->raise();
+    resultsWindow->activateWindow();
+
+    // 5. Force the window to appear
+    resultsWindow->setScheduleData(allProcesses, selectedAlgo, quaantum);
+    resultsWindow->setAttribute(Qt::WA_DeleteOnClose); // Clean up memory when closed
+    resultsWindow->setWindowModality(Qt::ApplicationModal); // Block main window until this is closed
+    resultsWindow->raise();
+    resultsWindow->activateWindow();
 
 }
-// void Widget::on_runButton_clicked() {
-//     // 1. Initialize the new window
-//     // We use a different name 'chartwindow' to avoid conflict with class name 'chart'
-//     chartwindow = new chart(nullptr);
-
-//     // 2. Pass algorithm type and process list
-//     QString selectedAlgo = ui->comboBoxalgo->currentText();
-
-//     // 3. Handle Quantum value
-//     int quantumm = 0;
-
-//     if (ui->quantum_frame->isVisible()) {
-//         quantumm = ui->quantum_text->text().toInt();
-//     }
-
-//     // 4. Send data (Ensure this function is defined in chart.cpp)
-//     chartwindow->setScheduleData(allProcesses, selectedAlgo, quantumm);
-
-//     // 5. Force the window to appear
-//     chartwindow->setAttribute(Qt::WA_DeleteOnClose); // Clean up memory when closed
-//     chartwindow->setWindowModality(Qt::ApplicationModal); // Block main window until this is closed
-//     chartwindow->raise();
-//     chartwindow->activateWindow();
-// }
-
-// void Widget::on_pauseButton_clicked() {
-//     resultsWindow = new ResultsWindow(nullptr);
-//     QString selectedAlgo = ui->comboBoxalgo->currentText();
-
-//     int quaantum = 0;
-//     if (ui->quantum_frame->isVisible()) {
-//         quaantum = ui->quantum_text->text().toInt();
-//     }
-
-//     if (!resultsWindow) {
-//     resultsWindow = new ResultsWindow(this);
-// }
-//     resultsWindow->show();
-//     resultsWindow->raise();
-//     resultsWindow->activateWindow();
-
-//     // 5. Force the window to appear
-//     resultsWindow->setScheduleData(allProcesses, selectedAlgo, quaantum);
-//     resultsWindow->setAttribute(Qt::WA_DeleteOnClose); // Clean up memory when closed
-//     resultsWindow->setWindowModality(Qt::ApplicationModal); // Block main window until this is closed
-//     resultsWindow->raise();
-//     resultsWindow->activateWindow();
-
-// }
