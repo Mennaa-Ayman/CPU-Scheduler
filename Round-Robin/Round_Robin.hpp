@@ -14,16 +14,18 @@ class RoundRobin{
 private:
     int timequantum;        // CPU unit time for each process
     int quantum_counter;    // time passed from the timequantum
-    int time;               // Current time
+  //  int time;               // Current time
     bool is_busy;           // Processer Busy or not
     std::queue<Process*> readyQueue;
-    std::vector <Process> &processes;
+   // std::vector <Process> &processes;
     Process* current_process;
 
 public:
     RoundRobin(std::vector<Process> & processes, int tq);
     int get_current_process();
     bool all_finished();
+    int time;               // Current time
+    std::vector <Process> &processes;
 
 };
 
