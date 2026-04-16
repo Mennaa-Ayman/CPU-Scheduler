@@ -8,11 +8,10 @@
 #include "../Round-Robin/Round_Robin.hpp"
 #include "../Shortest-Job-First/Preemptive_SJF.hpp"
 #include "../Shortest-Job-First/Non_Preemptive_SJF.hpp"
-//#include "NonLiveMode.hpp"
-//#include "LiveMode.hpp"
+#include "NonLiveMode.hpp"
+#include "LiveMode.hpp"
 
 class chart;
-class ResultsWindow;
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -33,8 +32,8 @@ private slots:
     void on_pushButton_clicked();
     void on_pushButton_3_clicked(); // Must match pushButton_3 exactly
     void onTimerTick();
-    //void on_runButton_clicked();
-    //void on_pauseButton_clicked();
+    void on_runButton_clicked();
+    void on_pauseButton_clicked();
 private:
     Ui::Widget *ui;
     std::vector<Process> allProcesses;
@@ -43,7 +42,7 @@ private:
     int currentRunningID = -1;
     int getRemainingTime(int pID);
     chart *chartwindow;
-    ResultsWindow *resultsWindow = nullptr; // Add this line
+    chart *resultsWindow = nullptr; // Add this line
     bool liveModeActive = false;
 };
 
