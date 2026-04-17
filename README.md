@@ -11,7 +11,6 @@ Type of scheduler + no of Processes ready to run currently + required
 information about each process according to the scheduler type.
 
 ## Operation:
-Two modes of operation:
 **1. Static Mode:**
 - Calculates and displays the full scheduling results (Gantt chart, turnaround times, and waiting times) instantly for a pre-defined batch of processes without a timer.
 
