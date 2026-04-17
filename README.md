@@ -1,11 +1,5 @@
 # CPU Scheduling
 
-## Types of Schedulers
-1. FCFS
-2. SJF (Preemptive and Non Preemptive)
-3. Priority (Preemptive and Non Preemptive) (the smaller the priority number the higher the priority)
-4. Round Robin
-
 ## Input: 
 Type of scheduler + no of Processes ready to run currently + required 
 information about each process according to the scheduler type.
@@ -19,11 +13,36 @@ information about each process according to the scheduler type.
 - Allows users to pause, resume, and dynamically inject new processes during execution.
 - Remaining burst time table is updated as time progresses.
 
-## Outputs:
-- Timeline showing the order and time taken by each process (Gantt Chart) drawn live.
-- Average waiting time and average turnaround time
-- Remaining burst time updated table live
-
+## Project Structure
+```
+├── Process
+|       └── Process.hpp/.cpp files
+|
+├── First-Come-First-Serve/   
+|       └── First-Come-First-Serve.cpp/.hpp files
+|
+├── Priority-Scheduler/
+|       ├── Preemptive_Priority.cpp/.hpp files
+|       └── Non_Preemptive_Priority.cpp/hpp files
+|
+├── Shortest-Job-First/
+|       ├── Preemptive_SJF.cpp/.hpp files
+|       └── Non_Preemptive_SJF.cpp/hpp files
+|
+├── Round-Robin
+|       └── Round-Robin.cpp/.hpp files
+|
+├── Live-Schduling-Manager
+|       └── SchdulingManager.cpp/.hpp files  #For handling dynamic process adding
+|
+├──  GUI/
+|       ├── LiveMode.cpp/.hpp/.ui files
+|       ├── NonLiveMode.cpp/.hpp/.ui files      # Static Process 
+|       └── Widget.cpp/.hpp/.ui files           # Main window
+|
+├── .gitignore
+└── CMakeLists.txt     # Building the project
+```
 ## How to run
 ### Requirements
 - C++ 17
