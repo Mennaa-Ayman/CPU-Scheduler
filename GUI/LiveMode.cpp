@@ -29,9 +29,13 @@ ResultsWindow::ResultsWindow(QWidget *parent)
     ui->setupUi(this);
     this->setAttribute(Qt::WA_QuitOnClose, false);
     
+    ui->processTable->setColumnCount(5);
+    ui->processTable->setHorizontalHeaderLabels({"PID", "ARRIVAL", "REMAINING", "PRIORITY", "WAITING"});
+    
     timelineScene_ = new QGraphicsScene(this);
     ui->graphicsView->setScene(timelineScene_);
 
+    ui->processTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->processTable->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->processTable->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->processTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -97,7 +101,6 @@ void ResultsWindow::onSimulationTick()
     ganttHistory_.push_back(runningPID);
     updateProcessTable_();
     updateGanttChart_();
-    ui->label_12->setText(QString::number(scheduler_->getCurrentTime()));
     setWindowTitle(QString("Live Mode - t=%1").arg(scheduler_->getCurrentTime()));
 
     if (scheduler_->isComplete()) {
