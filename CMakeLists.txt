@@ -18,6 +18,10 @@ else()
     set(QT_WIDGETS_TARGET Qt5::Widgets)
 endif()
 
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
 set(GUI_SOURCES
     ${PROJECT_SOURCE_DIR}/GUI/main.cpp
     ${PROJECT_SOURCE_DIR}/GUI/widget.cpp
