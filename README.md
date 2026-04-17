@@ -25,13 +25,20 @@ information about each process according to the scheduler type.
 - Remaining burst time updated table live
 
 ## How to run
+### Requirements
+- C++ 17
+- CMake 3.10 
+- Qt 5
+
+### Getting Started
 **1. Set-Location**
 ```
  "../CPU_Scheduling_Project"  
 ```
-**2. Build the GUI**
+**2. Build the project**
 ```
-cmake --build build-gui --target CPU_Scheduler
+cmake -B build -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
+cmake --build build
 ```
 **3. Execute it**
 ```
