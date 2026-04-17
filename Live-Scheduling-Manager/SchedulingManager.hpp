@@ -36,37 +36,11 @@ public:
     ~SchedulingManager();
 
     // ========== Simulation Control ==========
-    /**
-     * Initialize with process list and start simulation
-     */
     void initialize(const std::vector<Process>& processes);
-
-    /**
-     * Execute one time unit of simulation
-     * Returns: current running process ID (-1 if idle)
-     */
     int tick();
-
-    /**
-     * Pause simulation at current moment
-     * State is preserved for resume
-     */
     void pause();
-
-    /**
-     * Resume simulation from paused state
-     */
     void resume();
-
-    /**
-     * Inject a new process at current simulation time
-     * Only valid when paused. Process arrival_time is set to current time.
-     */
     void injectProcess(Process newProcess);
-
-    /**
-     * Check if all processes are finished
-     */
     bool isComplete() const;
 
     // ========== State Queries ==========

@@ -45,13 +45,13 @@ set(GUI_FORMS
     ${PROJECT_SOURCE_DIR}/GUI/LiveMode.ui
 )
 
-add_executable(CPU_Scheduler_GUI
+add_executable(CPU_Scheduler
     ${GUI_SOURCES}
     ${GUI_HEADERS}
     ${GUI_FORMS}
 )
 
-target_include_directories(CPU_Scheduler_GUI PRIVATE
+target_include_directories(CPU_Scheduler PRIVATE
     ${PROJECT_SOURCE_DIR}/GUI
     ${PROJECT_SOURCE_DIR}/Process
     ${PROJECT_SOURCE_DIR}/First-Come-First-Serve
@@ -62,8 +62,8 @@ target_include_directories(CPU_Scheduler_GUI PRIVATE
     ${PROJECT_SOURCE_DIR}
 )
 
-target_link_libraries(CPU_Scheduler_GUI PRIVATE ${QT_WIDGETS_TARGET})
+target_link_libraries(CPU_Scheduler PRIVATE ${QT_WIDGETS_TARGET})
 
-set_target_properties(CPU_Scheduler_GUI PROPERTIES
+set_target_properties(CPU_Scheduler PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}"
 )

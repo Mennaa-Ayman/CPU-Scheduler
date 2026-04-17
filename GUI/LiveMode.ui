@@ -79,14 +79,16 @@ QLineEdit, QComboBox {
   </widget>
 
   <widget class="QTableWidget" name="processTable">
-   <property name="geometry">
+  <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>180</y>
-     <width>530</width>
-     <height>250</height>
+    <x>30</x>
+    <y>180</y>
+    <width>550</width> <height>250</height>
     </rect>
-   </property>
+  </property>
+  <property name="styleSheet">
+    <string>QTableWidget { font-size: 14px; } QHeaderView { font-size: 12px; }</string>
+  </property>
   </widget>
 
   <widget class="QLabel" name="label_8">
