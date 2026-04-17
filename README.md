@@ -1,9 +1,5 @@
 # CPU Scheduling
 
-## Input: 
-Type of scheduler + no of Processes ready to run currently + required 
-information about each process according to the scheduler type.
-
 ## Operation:
 **1. Static Mode:**
 - Calculates and displays the full scheduling results (Gantt chart, turnaround times, and waiting times) instantly for a pre-defined batch of processes without a timer.
@@ -15,33 +11,25 @@ information about each process according to the scheduler type.
 
 ## Project Structure
 ```
-├── Process
-|       └── Process.hpp/.cpp files
-|
+├── Process/
+|       └── Process.hpp/.cpp 
 ├── First-Come-First-Serve/   
-|       └── First-Come-First-Serve.cpp/.hpp files
-|
+|       └── First-Come-First-Serve.cpp/.hpp 
 ├── Priority-Scheduler/
-|       ├── Preemptive_Priority.cpp/.hpp files
-|       └── Non_Preemptive_Priority.cpp/hpp files
-|
+|       ├── Preemptive_Priority.cpp/.hpp 
+|       └── Non_Preemptive_Priority.cpp/hpp 
 ├── Shortest-Job-First/
-|       ├── Preemptive_SJF.cpp/.hpp files
-|       └── Non_Preemptive_SJF.cpp/hpp files
-|
-├── Round-Robin
-|       └── Round-Robin.cpp/.hpp files
-|
-├── Live-Schduling-Manager
-|       └── SchdulingManager.cpp/.hpp files  #For handling dynamic process adding
-|
+|       ├── Preemptive_SJF.cpp/.hpp 
+|       └── Non_Preemptive_SJF.cpp/hpp 
+├── Round-Robin/
+|       └── Round-Robin.cpp/.hpp 
+├── Live-Schduling-Manager/           # For handling adding processes dynamically
+|       └── SchdulingManager.cpp/.hpp      
 ├──  GUI/
-|       ├── LiveMode.cpp/.hpp/.ui files
-|       ├── NonLiveMode.cpp/.hpp/.ui files      # Static Process 
-|       └── Widget.cpp/.hpp/.ui files           # Main window
-|
-├── .gitignore
-└── CMakeLists.txt     # Building the project
+|       ├── LiveMode.cpp/.hpp/.ui 
+|       ├── NonLiveMode.cpp/.hpp/.ui   
+|       └── Widget.cpp/.hpp/.ui           
+└── CMakeLists.txt    
 ```
 ## How to run
 ### Requirements
