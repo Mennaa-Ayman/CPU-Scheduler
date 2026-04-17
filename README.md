@@ -42,5 +42,5 @@ cmake --build build
 ```
 **3. Execute it**
 ```
-CPU_Scheduler.exe
+.\CPU_Scheduler.exe
 ```
